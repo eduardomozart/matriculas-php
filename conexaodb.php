@@ -17,7 +17,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Exemplo de como usar a conexão (opcional, para teste)
-    echo "Conexão bem-sucedida!";
+    // echo "Conexão bem-sucedida!";
 } catch (PDOException $e) {
     // Em caso de falha, exibe a mensagem de erro e interrompe a execução
     die("Erro na conexão ao banco de dados: " . $e->getMessage());
