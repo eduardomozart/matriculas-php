@@ -64,7 +64,7 @@ try {
 try {
     $stmt = $pdo->prepare("INSERT INTO `usuarios`(`NomeUsuario`, `Senha`, `idPerfil`) VALUES (:nome_usuario,:senha,:id_perfil)");
     $stmt->bindParam(':nome_usuario', $nome_usuario);
-    $stmt->bindParam(':senha', $senha);
+    $stmt->bindParam(':senha', md5($senha));
     $stmt->bindParam(':id_perfil', $id_perfil);
     $stmt->execute();
 
