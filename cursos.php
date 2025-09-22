@@ -8,6 +8,30 @@
     <h1>Cursos</h1>
     
     <h2>Cursos cadastrados</h2>
+    <table border="1">
+      <tr>
+        <th>ID do Curso </th>
+        <th>Nome do Curso</th>
+        <th>Ações</th>
+      </tr>
+      <?php
+      include_once("conexaodb.php");
+      $stmt = $pdo->prepare("SELECT * FROM cursointeresse");
+      $stmt->execute();
+      $resultados = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+      //pegue os resultados
+      $linhas = $stmt->fetchAll();
+      foreach($linhas as $linha) {
+        echo "<tr>";
+        echo "<td>" . $linha['idCursoInteresse'] . "</td>";
+        echo "<td>" . $linha['Nome'] . "</td>";
+        echo "<td><a href='curso_delete.php?id_curso=" . $linha['idCursoInteresse'] . "'
+                    onclick='return confirm(\"Tem certeza que deseja excluir o curso selecionado?\")'>Delete</a></td>";
+        echo "</tr>";
+      }
+    ?>
+  </table>
 
     <h2>Cadastrar novo curso</h2>
     <form action="curso_add.php" method="get">
