@@ -1,5 +1,5 @@
 <?php
-include("conexaodb.php");
+include_once("conexaodb.php");
 
 // var_dump($_GET);
 
