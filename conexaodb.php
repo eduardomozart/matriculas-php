@@ -1,5 +1,4 @@
 <?php
-include_once("login_verifica.php");
 
 // Definição das constantes de conexão
 define('DB_HOST', 'localhost');  // Onde o banco de dados está hospedado

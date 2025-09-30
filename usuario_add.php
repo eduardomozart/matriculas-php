@@ -1,4 +1,5 @@
 <?php
+include_once("login_verifica.php");
 include_once("conexaodb.php");
 
 // Escreve o conteúdo recebido pelo formulário na tela
